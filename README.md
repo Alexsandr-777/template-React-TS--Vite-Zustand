@@ -1,73 +1,136 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="https://vitejs.dev/logo.svg" width="100" alt="Vite logo">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" width="100" alt="React logo">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">⚡ React + Vite + TypeScript Starter Template</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>Шаблон фронтенд-проекта с чистой архитектурой, строгими линтерами и готовыми хуками для быстрого старта.</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <a href="https://github.com/<твой_ник>/<имя_репозитория>/generate">
+    <img src="https://img.shields.io/badge/Use_this_template-181717?style=for-the-badge&logo=github" alt="Use this template"/>
+  </a>
+  <a href="https://codesandbox.io/s/github/<твой_ник>/<имя_репозитория>">
+    <img src="https://img.shields.io/badge/Open_in_CodeSandbox-000000?style=for-the-badge&logo=codesandbox" alt="Run in CodeSandbox"/>
+  </a>
+</p>
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🚀 Как использовать шаблон
 
-## Expanding the ESLint configuration
+> Можно **клонировать напрямую** или **создать проект из шаблона на GitHub**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🧭 Вариант 1 — Клонировать напрямую
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+git clone https://github.com/<твой_ник>/<имя_репозитория>.git my-app
+cd my-app
+npm install
+npm run dev
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🧩 Вариант 2 — Создать новый проект на основе шаблона
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+На странице репозитория нажми “Use this template” → “Create a new repository”
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Укажи имя своего проекта и создай новый репозиторий
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+Склонируй его к себе:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+git clone https://github.com/<твой_ник>/<новый_репозиторий>.git
+cd <новый_репозиторий>
+npm install
+npm run dev
+
+  ---
+
+⚙️ Требования:
+
+  🟢 Node.js ≥ 18
+
+  🧩 npm ≥ 9
+
+  🔧 Git установлен и инициализирован
+
+  ---
+
+💡 Быстрый старт:
+    npm install      # установить зависимости
+    npm run dev      # запустить dev-сервер
+
+  ---
+
+🧰 Стек:
+
+  ⚛️ React 18 + TypeScript + Vite (SWC)
+
+  🧹 ESLint (Flat config, v9+) + Prettier
+
+  🧩 Vitest + React Testing Library
+
+  🐶 Husky + lint-staged — автоматические проверки перед коммитом
+
+  🪶 Zustand — лёгкий state-manager
+
+  🎨 SVGR + tsconfig-paths + EditorConfig
+
+  ---
+
+🏗️ Команды:
+    -Задача:	          -Команда:
+    Запуск dev-сервера  npm run dev
+    Сборка проекта	    npm run build
+    Просмотр сборки	    npm run preview
+    Тесты	              npm run test
+    Тесты с UI	        npm run test:ui
+    Проверка кода	      npm run lint
+    Автофикс ESLint	    npm run lint:fix
+    Форматирование	    npm run format
+    Проверка типов	    npm run typecheck
+
+  ##При каждом коммите Husky автоматически запускает ESLint и Prettier для изменённых файлов.
+
+  ---
+
+  📁 Структура проекта:
+
+       src/
+      ├── assets/         # изображения, иконки, звуки
+      ├── components/     # UI-компоненты
+      ├── stores/         # Zustand сторы
+      ├── lib/            # API, utils, вспомогательные функции
+      ├── test/           # setup Vitest
+      ├── App.tsx
+      └── main.tsx
+
+  ---
+
+  ⚡ Пример использования Zustand:
+
+  import { useAppStore } from "@/stores/app.store";
+
+  function Counter() {
+    const count = useAppStore((s) => s.count);
+    return <div>Count: {count}</div>;
+  }
+
+  ---
+
+  🧠 Полезные советы:
+
+Используй npm run format перед коммитом — чтобы не было диффов в стиле кода
+
+Храни access token в памяти через Zustand, а не в localStorage
+
+Добавь .env для API-переменных окружения
+
+Структурируй сторы по доменам: auth.store, workout.store, nutrition.store — удобно для фитнес-экосистемы
+
+---
+
+MIT © Sokol
 ```
